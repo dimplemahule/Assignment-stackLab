@@ -109,6 +109,15 @@ app.post("/userData", async (req, res) => {
     } catch (error) { }
 });
 
+app.get("/getAlluser", async(req,res)=>{
+    try{
+        const allUser = await User.find({});
+        res.send({status:"ok", data: allUser})
+    }catch(error){
+        console.log(error)
+    }
+})
+
 
 
 
