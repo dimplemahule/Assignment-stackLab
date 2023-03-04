@@ -2,14 +2,32 @@
 const mongoose = require('mongoose')
 
 const userDetailsSchema = new mongoose.Schema({ //for the creatting purpose
-    name: String,
+    name: {
+        type: String,
+        unique: true,
+        required: true
+    },
     email: {
         type: String,
-        unique: true
+        unique: true,
+        required: true
     },
-    password: String,
-    phoneNo: String,
-    address: String
+    password: {
+        type: String,
+        unique: true,
+        required: true
+    },
+    phoneNo: {
+        type: String,
+        unique: true,
+        required: true
+    },
+    address: {
+        type: String,
+        unique: true,
+        required: true
+    },
+    userType: String
 }, {
     collection: "UserInfo"
 })
